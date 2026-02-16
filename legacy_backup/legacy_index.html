@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeHelp - Connect with Helpers Nearby</title>
+    <link rel="stylesheet" href="style.css?v=2">
+</head>
+
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1>Local help,<br><span>right around the corner.</span></h1>
+            <p>Connect with trusted neighbors for small tasks, errands, and community projects. Completely free.</p>
+
+            <a href="#" class="btn-app-store">
+                <img src="assets/app-store-badge.png" alt="Download on the App Store">
+            </a>
+
+            <!-- Rounded Map Showcase -->
+            <div class="map-showcase">
+                <!-- Replace with screenshot-map.png -->
+                <img src="assets/screenshot-map.png" alt="WeHelp Map View" style="background: #e1e1e1;">
+                <div class="map-placeholder-text" style="display:none;">Map Screenshot Placeholder</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Live Requests (Horizontal Scroll) -->
+    <section class="live-requests">
+        <div class="container">
+            <div class="section-header">
+                <h2>Requests in your area</h2>
+                <p>See who needs a hand nearby right now.</p>
+            </div>
+
+            <!-- Category Pills (Hacoo Style) -->
+            <div class="category-pills">
+                <span class="pill active">For You</span>
+                <span class="pill">Moving</span>
+                <span class="pill">Yard Work</span>
+                <span class="pill">Tech Help</span>
+                <span class="pill">Errands</span>
+                <span class="pill">Cleaning</span>
+            </div>
+
+            <!-- Horizontal Scroll Container -->
+            <div class="scroll-container">
+
+                <!-- Card 1: Elderly / Grocery -->
+                <div class="request-card">
+                    <div class="req-header">
+                        <img src="https://i.pravatar.cc/150?img=11" alt="Avatar" class="req-avatar">
+                        <div class="req-meta">
+                            <span class="req-name">Martha H.</span>
+                            <span class="req-dist">0.2 mi away</span>
+                        </div>
+                    </div>
+                    <div class="req-body">
+                        <div class="req-title">Grocery Run Help</div>
+                        <div class="req-desc">I need someone to pick up a small grocery order from Trader Joe's. I have
+                            trouble lifting heavy bags.</div>
+                    </div>
+                    <div class="req-footer">
+                        <span class="req-badge">Errands</span>
+                        <span class="req-time">1 hr</span>
+                    </div>
+                </div>
+
+                <!-- Card 2: Yard Work -->
+                <div class="request-card">
+                    <div class="req-header">
+                        <img src="https://i.pravatar.cc/150?img=3" alt="Avatar" class="req-avatar">
+                        <div class="req-meta">
+                            <span class="req-name">James K.</span>
+                            <span class="req-dist">0.5 mi away</span>
+                        </div>
+                    </div>
+                    <div class="req-body">
+                        <div class="req-title">Mow Front Lawn</div>
+                        <div class="req-desc">My lawnmower broke and the grass is getting long. Can anyone help me out
+                            this weekend?</div>
+                    </div>
+                    <div class="req-footer">
+                        <span class="req-badge">Yard Work</span>
+                        <span class="req-time">2 hrs</span>
+                    </div>
+                </div>
+
+                <!-- Card 3: Moving / Strong -->
+                <div class="request-card">
+                    <div class="req-header">
+                        <img src="https://i.pravatar.cc/150?img=5" alt="Avatar" class="req-avatar">
+                        <div class="req-meta">
+                            <span class="req-name">Sarah J.</span>
+                            <span class="req-dist">0.8 mi away</span>
+                        </div>
+                    </div>
+                    <div class="req-body">
+                        <div class="req-title">Move Sofa Upstairs</div>
+                        <div class="req-desc">Just need two strong pairs of hands to get a sofa up one flight of stairs.
+                            Will provide water and pizza!</div>
+                    </div>
+                    <div class="req-footer">
+                        <span class="req-badge">Moving</span>
+                        <span class="req-time">30 min</span>
+                    </div>
+                </div>
+
+                <!-- Card 4: Tech Help -->
+                <div class="request-card">
+                    <div class="req-header">
+                        <img src="https://i.pravatar.cc/150?img=68" alt="Avatar" class="req-avatar">
+                        <div class="req-meta">
+                            <span class="req-name">Robert P.</span>
+                            <span class="req-dist">1.2 mi away</span>
+                        </div>
+                    </div>
+                    <div class="req-body">
+                        <div class="req-title">Printer Setup</div>
+                        <div class="req-desc">My new wi-fi printer is confusing. Need someone tech-savvy to help me
+                            connect it to my laptop.</div>
+                    </div>
+                    <div class="req-footer">
+                        <span class="req-badge">Tech Help</span>
+                        <span class="req-time">45 min</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section 1: Create Request -->
+    <section class="feature-section">
+        <div class="container feature-block">
+            <div class="feature-text">
+                <h3>Post a request in seconds. <br><span class="highlight">Completely Free.</span></h3>
+                <p>Whether you need help moving, cleaning, or just running an errand, posting a request takes less than
+                    a minute. No hidden fees, ever.</p>
+                <div style="display: flex; gap: 10px; opacity: 0.8;">
+                    <span>✅ Secure</span>
+                    <span>✅ Verified Users</span>
+                    <span>✅ Local</span>
+                </div>
+            </div>
+            <div class="feature-visual">
+                <div class="phone-mockup">
+                    <div class="notch"></div>
+                    <!-- Replace with screenshot-create.png -->
+                    <img src="assets/screenshot-create.png" alt="Create Request Screen" style="background: #fff;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section 2: Leaderboard/Badges -->
+    <section class="feature-section" style="background: #fff;">
+        <div class="container feature-block reverse">
+            <div class="feature-text">
+                <h3>Earn badges & climb the leaderboard.</h3>
+                <p>Track your impact in the community. Earn points for every person you help and showcase your
+                    contributions with unique badges.</p>
+                <a href="#" class="btn-app-store">
+                    <img src="assets/app-store-badge.png" alt="Download on the App Store">
+                </a>
+            </div>
+            <div class="feature-visual">
+                <!-- Custom Visual: Leaderboard & Badges (No Phone Frame) -->
+                <div class="visual-showcase">
+
+                    <!-- Floating Badges -->
+                    <div class="badge-float badge-1">
+                        <span class="badge-icon">🌟</span>
+                        <span class="badge-label">Super Helper</span>
+                    </div>
+                    <div class="badge-float badge-2">
+                        <span class="badge-icon">🤝</span>
+                        <span class="badge-label">Community First</span>
+                    </div>
+
+                    <!-- Leaderboard Card -->
+                    <div class="leaderboard-card">
+                        <div class="lb-header">
+                            <h4>This Week's Top Helpers</h4>
+                        </div>
+                        <div class="lb-row top-1">
+                            <span class="lb-rank">1</span>
+                            <img src="https://i.pravatar.cc/150?img=12" class="lb-avatar">
+                            <span class="lb-name">You</span>
+                            <span class="lb-points">450 pts</span>
+                        </div>
+                        <div class="lb-row">
+                            <span class="lb-rank">2</span>
+                            <img src="https://i.pravatar.cc/150?img=5" class="lb-avatar">
+                            <span class="lb-name">Sarah J.</span>
+                            <span class="lb-points">320 pts</span>
+                        </div>
+                        <div class="lb-row">
+                            <span class="lb-rank">3</span>
+                            <img src="https://i.pravatar.cc/150?img=3" class="lb-avatar">
+                            <span class="lb-name">Mike T.</span>
+                            <span class="lb-points">280 pts</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section (Hacoo Style) -->
+    <section class="reviews-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Reviews that speak for themselves</h2>
+                <p>Our community loves helping each other.</p>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <p class="review-text">"I couldn't have moved my couch without WeHelp. Two neighbors showed up
+                        within an hour. Amazing!"</p>
+                    <div class="review-author">
+                        <img src="https://i.pravatar.cc/150?img=9" alt="User">
+                        <span>Elaine Brown</span>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <p class="review-text">"I love earning badges for helping out. It feels good to give back to the
+                        community."</p>
+                    <div class="review-author">
+                        <img src="https://i.pravatar.cc/150?img=12" alt="User">
+                        <span>Gil Murray</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA (Hacoo Style Orange Banner -> Green) -->
+    <section class="bottom-cta">
+        <div class="container">
+            <div class="cta-banner">
+                <div class="cta-content">
+                    <h2>Download mobile app for <br>better community connection</h2>
+                    <ul class="cta-list">
+                        <li>Verified Users</li>
+                        <li>Instant Notifications</li>
+                    </ul>
+                    <div class="cta-buttons">
+                        <a href="#" class="btn-app-store-dark"><img src="assets/app-store-badge.png"
+                                style="filter: brightness(0) invert(1);"></a>
+                    </div>
+                </div>
+                <div class="cta-image">
+                    <img src="assets/screenshot-home.png" alt="App Preview"
+                        style="mask-image: linear-gradient(to bottom, black 80%, transparent 100%);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">We<span>Help</span></div>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="mailto:support@wehelp.community">Support</a>
+            </div>
+            <div style="width: 100%; text-align: center; margin-top: 20px; font-size: 0.8rem; color: #aaa;">
+                &copy; 2026 WeHelp. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
