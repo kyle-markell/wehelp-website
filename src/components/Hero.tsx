@@ -34,9 +34,11 @@ export function Hero() {
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
-                                <Button size="lg" className="w-full sm:w-auto hover:scale-105 transition-transform bg-[#00B900] hover:bg-[#009900]">
-                                    Download WeHelp
-                                </Button>
+                                <a href="https://apps.apple.com/us/app/wehelp-community-volunteering/id6759263096" target="_blank" rel="noopener noreferrer">
+                                    <Button size="lg" className="w-full sm:w-auto hover:scale-105 transition-transform bg-[#00B900] hover:bg-[#009900]">
+                                        Download WeHelp
+                                    </Button>
+                                </a>
                             </div>
                         </motion.div>
                     </div>

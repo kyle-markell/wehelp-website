@@ -1,0 +1,15 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "7DA5QR4QAG.com.kylemarkell.WeHelp",
+                "paths": [
+                    "/request/*",
+                    "/profile/*",
+                    "*"
+                ]
+            }
+        ]
+    }
+}

@@ -3,7 +3,7 @@ import { Users, ShieldCheck, Heart, Zap } from 'lucide-react';
 const stats = [
     { icon: Users, label: "Built for real communities" },
     { icon: Zap, label: "Designed to make helping effortless" },
-    { icon: ShieldCheck, label: "Free forever, for everyone" },
+    { icon: ShieldCheck, label: "Free for everyone" },
     { icon: Heart, label: "Powered by people nearby" },
 ];
 

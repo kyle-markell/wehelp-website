@@ -17,9 +17,11 @@ export function Footer() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <Button size="lg" className="gap-2 bg-[#00B900] hover:bg-[#009900]">
-                            Download on App Store
-                        </Button>
+                        <a href="https://apps.apple.com/us/app/wehelp-community-volunteering/id6759263096" target="_blank" rel="noopener noreferrer">
+                            <Button size="lg" className="gap-2 bg-[#00B900] hover:bg-[#009900]">
+                                Download on App Store
+                            </Button>
+                        </a>
                     </div>
                 </div>
 
