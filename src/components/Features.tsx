@@ -4,29 +4,29 @@ import { motion } from 'framer-motion';
 const features = [
     {
         icon: Map,
-        title: "Live Map of Nearby Requests",
-        description: "See real people nearby who need help — updated in real time.",
+        title: "No long commitments.",
+        description: "Jump in and help whenever it works for your schedule.",
         color: "bg-blue-100 text-blue-600",
         delay: 0
     },
     {
         icon: PlusCircle,
-        title: "Post What You Need",
-        description: "Moving, yard work, tech support, errands. Ask in seconds.",
+        title: "No complicated signup.",
+        description: "Just download, verify, and start helping your neighbors.",
         color: "bg-[#00B900]/10 text-[#00B900]",
         delay: 0.1
     },
     {
         icon: Users,
-        title: "Volunteer in One Tap",
-        description: "Join opportunities instantly, solo or with others.",
+        title: "Just real help.",
+        description: "When it's needed most, connect with people near you.",
         color: "bg-purple-100 text-purple-600",
         delay: 0.2
     },
     {
         icon: MessageSquare,
-        title: "Group Messaging + Coordination",
-        description: "Chat with other volunteers and plan everything smoothly.",
+        title: "Micro-volunteering",
+        description: "Small acts of kindness that create stronger communities.",
         color: "bg-orange-100 text-orange-600",
         delay: 0.3
     }
@@ -38,11 +38,11 @@ export function Features() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-4">
-                        Kindness, <br className="hidden sm:block" />
-                        <span className="text-[#00B900]">made easy.</span>
+                        Micro-volunteering for <br className="hidden sm:block" />
+                        <span className="text-[#00B900]">everyday life</span>
                     </h2>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Help when you have time. In ways that feel natural. With impact you can see.
+                        WeHelp connects people who need help with neighbors who have a little time. From small favors to community tasks, you can jump in and help whenever it works for you.
                     </p>
                 </div>
 

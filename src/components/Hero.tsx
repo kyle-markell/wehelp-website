@@ -1,7 +1,37 @@
 import { motion } from 'framer-motion';
 import { Button } from './Button';
+import { useEffect, useState } from 'react';
+
+function useCounter(end: number, duration: number = 2500) {
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+        let startTimestamp: number | null = null;
+        let animationFrameId: number;
+
+        const step = (timestamp: number) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            const easeOut = 1 - Math.pow(1 - progress, 3);
+            setCount(Math.floor(easeOut * end));
+
+            if (progress < 1) {
+                animationFrameId = window.requestAnimationFrame(step);
+            }
+        };
+
+        animationFrameId = window.requestAnimationFrame(step);
+
+        return () => window.cancelAnimationFrame(animationFrameId);
+    }, [end, duration]);
+
+    return count;
+}
 
 export function Hero() {
+    // Mock data for the live counter. Replace with Supabase fetch later.
+    const userCount = useCounter(2450);
+    const helpsCount = useCounter(8630);
     return (
         <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
             {/* Background Gradient Mesh */}
@@ -22,15 +52,15 @@ export function Hero() {
                         >
 
                             <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-6 leading-[1.1]">
-                                Find Help. <br />
+                                Good deeds, <br />
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00B900] to-[#006000]">
-                                    Be the Help.
+                                    nearby.
                                 </span>
                             </h1>
 
                             <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                                <span className="font-bold text-[#00B900]">WeHelp</span> brings people together to help each other.
-                                From big tasks to small favors, helping has never been easier.
+                                Find quick ways to help people in your community — whenever you have a few minutes.<br /><br />
+                                <span className="font-bold text-[#00B900] text-3xl">Small acts. Real impact.</span>
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
@@ -39,6 +69,18 @@ export function Hero() {
                                         Download WeHelp
                                     </Button>
                                 </a>
+                            </div>
+
+                            {/* Live Counter */}
+                            <div className="mt-10 flex gap-6 justify-center lg:justify-start">
+                                <div className="bg-white px-6 py-4 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center">
+                                    <span className="text-4xl font-black text-[#00B900]">{userCount.toLocaleString()}</span>
+                                    <span className="text-xs font-bold text-gray-500 uppercase tracking-widest mt-1">Users on WeHelp</span>
+                                </div>
+                                <div className="bg-white px-6 py-4 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center">
+                                    <span className="text-4xl font-black text-[#00B900]">{helpsCount.toLocaleString()}</span>
+                                    <span className="text-xs font-bold text-gray-500 uppercase tracking-widest mt-1">Good Deeds Done</span>
+                                </div>
                             </div>
                         </motion.div>
                     </div>

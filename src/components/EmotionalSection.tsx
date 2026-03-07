@@ -14,7 +14,7 @@ export function EmotionalSection() {
                     transition={{ duration: 0.8 }}
                     className="text-4xl md:text-6xl font-bold tracking-tight mb-12 leading-tight"
                 >
-                    Volunteering shouldn't be <span className="text-gray-400">hard.</span>
+                    Helping shouldn't be <span className="text-gray-400">complicated</span>
                 </motion.h2>
 
                 <motion.div
@@ -25,10 +25,11 @@ export function EmotionalSection() {
                     className="space-y-8 text-xl md:text-2xl text-gray-300 leading-relaxed font-light"
                 >
                     <p>
-                        <span className="font-bold text-[#00B900]">WeHelp</span> makes it simple to find and post real requests,<br />
-                        show up instantly, and help in ways that matter.
+                        Most volunteering requires planning, schedules, and long commitments.<br /><br />
+                        But sometimes someone just needs 10 minutes of help. <br />
+                        <span className="font-bold text-white">A quick favor. A second set of hands. Someone who can show up.</span>
                     </p>
-
+                    <p className="text-3xl font-bold text-[#00B900]">That’s where WeHelp comes in.</p>
                 </motion.div>
             </div>
         </section>

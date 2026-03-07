@@ -4,18 +4,18 @@ import { Smartphone, CheckCircle2, HeartHandshake } from 'lucide-react';
 const steps = [
     {
         icon: Smartphone,
-        title: "1. Post what you need",
-        description: "Describe the task, set a location, and ask for help in seconds."
+        title: "1. Post a task",
+        description: "Need a hand? Share what you need and your location."
     },
     {
         icon: CheckCircle2,
-        title: "2. Match with volunteers",
-        description: "Neighbors nearby see your request and can accept it instantly."
+        title: "2. Neighbors see it",
+        description: "People nearby can jump in when they have time."
     },
     {
         icon: HeartHandshake,
         title: "3. Show up & help",
-        description: "Coordinate details, get the job done, and make someone's day."
+        description: "Coordinate, complete the task, and make someone's day."
     }
 ];
 
