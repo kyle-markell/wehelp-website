@@ -1,116 +1,87 @@
 import { motion } from 'framer-motion';
 import { Button } from './Button';
-import { useEffect, useState } from 'react';
 
-function useCounter(end: number, duration: number = 2500) {
-    const [count, setCount] = useState(0);
 
-    useEffect(() => {
-        let startTimestamp: number | null = null;
-        let animationFrameId: number;
-
-        const step = (timestamp: number) => {
-            if (!startTimestamp) startTimestamp = timestamp;
-            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-            const easeOut = 1 - Math.pow(1 - progress, 3);
-            setCount(Math.floor(easeOut * end));
-
-            if (progress < 1) {
-                animationFrameId = window.requestAnimationFrame(step);
-            }
-        };
-
-        animationFrameId = window.requestAnimationFrame(step);
-
-        return () => window.cancelAnimationFrame(animationFrameId);
-    }, [end, duration]);
-
-    return count;
-}
 
 export function Hero() {
-    // Mock data for the live counter. Replace with Supabase fetch later.
-    const userCount = useCounter(2450);
-    const helpsCount = useCounter(8630);
     return (
-        <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-            {/* Background Gradient Mesh */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 pointer-events-none">
-                <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-blue-100/50 rounded-full blur-[100px] animate-pulse" />
-                <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-green-100/50 rounded-full blur-[100px] animate-pulse delay-1000" />
-            </div>
-
+        <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
 
                     {/* Text Content */}
-                    <div className="flex-1 text-center lg:text-left z-10">
+                    <div className="flex-1 text-center lg:text-left z-10 space-y-8">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
                         >
-
-                            <h1 className="text-5xl lg:text-7xl font-bold tracking-tight text-gray-900 mb-6 leading-[1.1]">
-                                Good deeds, <br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00B900] to-[#006000]">
-                                    nearby.
-                                </span>
+                            <h1 className="text-6xl lg:text-8xl font-black tracking-tighter text-gray-900 mb-4 leading-none">
+                                Introducing WeHelp
                             </h1>
+                            <p className="text-2xl lg:text-4xl font-medium text-gray-400 tracking-tight mb-8">
+                                The modern way to volunteer.
+                            </p>
+                        </motion.div>
 
-                            <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                                Find quick ways to help people in your community — whenever you have a few minutes.<br /><br />
-                                <span className="font-bold text-[#00B900] text-3xl">Small acts. Real impact.</span>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.1 }}
+                            className="space-y-6"
+                        >
+                            <p className="text-xl lg:text-2xl text-gray-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+                                Help your neighbors with a variety of tasks in just minutes. Give help. Get help. WeHelp.
                             </p>
 
-                            <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
-                                <a href="https://apps.apple.com/us/app/wehelp-community-volunteering/id6759263096" target="_blank" rel="noopener noreferrer">
-                                    <Button size="lg" className="w-full sm:w-auto hover:scale-105 transition-transform bg-[#00B900] hover:bg-[#009900]">
-                                        Download WeHelp
-                                    </Button>
-                                </a>
-                            </div>
+                            <p className="text-xl lg:text-2xl font-semibold text-gray-900 max-w-2xl mx-auto lg:mx-0">
+                                Find quick ways to help people nearby.
+                            </p>
+                        </motion.div>
 
-                            {/* Live Counter */}
-                            <div className="mt-10 flex gap-6 justify-center lg:justify-start">
-                                <div className="bg-white px-6 py-4 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center">
-                                    <span className="text-4xl font-black text-[#00B900]">{userCount.toLocaleString()}</span>
-                                    <span className="text-xs font-bold text-gray-500 uppercase tracking-widest mt-1">Users on WeHelp</span>
-                                </div>
-                                <div className="bg-white px-6 py-4 rounded-2xl shadow-lg border border-gray-100 flex flex-col items-center">
-                                    <span className="text-4xl font-black text-[#00B900]">{helpsCount.toLocaleString()}</span>
-                                    <span className="text-xs font-bold text-gray-500 uppercase tracking-widest mt-1">Good Deeds Done</span>
-                                </div>
-                            </div>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            className="pt-4"
+                        >
+                            <a href="https://apps.apple.com/us/app/wehelp-community-volunteering/id6759263096" target="_blank" rel="noopener noreferrer">
+                                <Button size="lg" className="w-full sm:w-auto px-12 py-6 text-xl rounded-full hover:scale-105 transition-transform bg-gray-900 text-white hover:bg-black shadow-xl">
+                                    Download WeHelp
+                                </Button>
+                            </a>
                         </motion.div>
                     </div>
 
                     {/* iPhone Mockup */}
-                    <div className="flex-1 relative w-full max-w-[400px] lg:max-w-none">
+                    <div className="flex-1 relative w-full max-w-[400px] lg:max-w-none flex justify-center lg:justify-end">
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            animate={{ opacity: 1, scale: 1 }}
+                            initial={{ opacity: 0, scale: 0.95, y: 40 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
                             className="relative z-10"
                         >
-                            <div className="relative mx-auto border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[600px] w-[300px] shadow-2xl">
-                                <div className="h-[32px] w-[3px] bg-gray-800 absolute -left-[17px] top-[72px] rounded-l-lg"></div>
-                                <div className="h-[46px] w-[3px] bg-gray-800 absolute -left-[17px] top-[124px] rounded-l-lg"></div>
-                                <div className="h-[46px] w-[3px] bg-gray-800 absolute -left-[17px] top-[178px] rounded-l-lg"></div>
-                                <div className="h-[64px] w-[3px] bg-gray-800 absolute -right-[17px] top-[142px] rounded-r-lg"></div>
-                                <div className="rounded-[2rem] overflow-hidden w-full h-full bg-white relative">
-                                    {/* Mockup Screen Content */}
+                            {/* Sleek App Mockup Frame */}
+                            <div className="relative mx-auto border-gray-100 bg-white border-[8px] rounded-[3rem] h-[650px] w-[320px] shadow-2xl ring-1 ring-gray-900/5">
+                                <div className="rounded-[2.5rem] overflow-hidden w-full h-full bg-gray-50 relative flex items-center justify-center">
+                                    {/* Placeholder or real image */}
+                                    <div className="text-center p-6 text-gray-400 font-medium">
+                                        [APP SCREENSHOT — MAP WITH NEARBY TASKS]
+                                    </div>
                                     <img
                                         src="/assets/phone-screen.png"
                                         alt="App Screenshot"
-                                        className="w-full h-full object-cover"
+                                        className="w-full h-full object-cover absolute top-0 left-0 hover:opacity-0 transition-opacity"
+                                        onError={(e) => {
+                                            (e.target as HTMLImageElement).style.display = 'none';
+                                        }}
                                     />
                                 </div>
                             </div>
                         </motion.div>
 
-                        {/* Decorative blobs behind phone */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[80%] bg-gradient-to-tr from-blue-200/30 to-purple-200/30 blur-3xl rounded-full -z-10" />
+                        {/* Apple-style soft drop shadow behind phone */}
+                        <div className="absolute top-1/2 left-1/2 lg:left-3/4 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-gray-200/50 blur-[100px] rounded-full -z-10" />
                     </div>
                 </div>
             </div>

@@ -1,59 +1,25 @@
 import { motion } from 'framer-motion';
-import { Smartphone, CheckCircle2, HeartHandshake } from 'lucide-react';
-
-const steps = [
-    {
-        icon: Smartphone,
-        title: "1. Post a task",
-        description: "Need a hand? Share what you need and your location."
-    },
-    {
-        icon: CheckCircle2,
-        title: "2. Neighbors see it",
-        description: "People nearby can jump in when they have time."
-    },
-    {
-        icon: HeartHandshake,
-        title: "3. Show up & help",
-        description: "Coordinate, complete the task, and make someone's day."
-    }
-];
+import { Button } from './Button';
 
 export function HowItWorks() {
     return (
-        <section className="py-24 bg-white">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl font-bold tracking-tight text-gray-900">How it works</h2>
-                </div>
-
-                <div className="relative">
-                    {/* Connector Line (Desktop) */}
-                    <div className="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gray-100 -z-10" />
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-                        {steps.map((step, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.2, duration: 0.5 }}
-                                className="text-center bg-white"
-                            >
-                                <div className="w-24 h-24 mx-auto bg-white rounded-full border-4 border-gray-50 flex items-center justify-center mb-6 shadow-sm relative z-10">
-                                    <div className="w-16 h-16 bg-gray-900 rounded-full flex items-center justify-center text-white">
-                                        <step.icon size={32} />
-                                    </div>
-                                </div>
-                                <h3 className="text-xl font-bold text-gray-900 mb-3">{step.title}</h3>
-                                <p className="text-gray-600 max-w-xs mx-auto">
-                                    {step.description}
-                                </p>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
+        <section className="py-32 bg-gray-900 border-t border-gray-800">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.6 }}
+                >
+                    <h2 className="text-5xl md:text-7xl font-bold tracking-tighter text-white mb-10 leading-tight">
+                        Your next good deed is nearby.
+                    </h2>
+                    <a href="https://apps.apple.com/us/app/wehelp-community-volunteering/id6759263096" target="_blank" rel="noopener noreferrer">
+                        <Button size="lg" className="px-12 py-6 text-xl rounded-full hover:scale-105 transition-transform bg-[#00B900] text-gray-900 hover:bg-[#009900] shadow-xl font-bold border-none">
+                            Download on App Store
+                        </Button>
+                    </a>
+                </motion.div>
             </div>
         </section>
     );

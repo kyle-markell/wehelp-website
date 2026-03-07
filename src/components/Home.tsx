@@ -1,10 +1,9 @@
 import { Header } from './Header';
 import { Hero } from './Hero';
-import { SocialProof } from './SocialProof';
-import { Features } from './Features';
 import { EmotionalSection } from './EmotionalSection';
-import { HowItWorks } from './HowItWorks';
+import { Features } from './Features';
 import { Testimonials } from './Testimonials';
+import { HowItWorks } from './HowItWorks';
 import { Footer } from './Footer';
 
 export function Home() {
@@ -13,11 +12,10 @@ export function Home() {
             <Header />
             <main>
                 <Hero />
-                <SocialProof />
-                <Features />
                 <EmotionalSection />
-                <HowItWorks />
+                <Features />
                 <Testimonials />
+                <HowItWorks />
             </main>
             <Footer />
         </div>
