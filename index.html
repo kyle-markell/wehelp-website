@@ -1,239 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WeHelp - Connect with Helpers Nearby</title>
-    <link rel="stylesheet" href="style.css?v=3">
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" href="/assets/logo-icon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WeHelp - Get Help. Give Help.</title>
+  <script type="text/javascript">
+    // Single Page Apps for GitHub Pages
+    // MIT License
+    // https://github.com/rafrex/spa-github-pages
+    // This script checks to see if a redirect is present in the query string,
+    // converts it back into the correct url and adds it to the
+    // browser's history using window.history.replaceState(...),
+    // which won't cause the browser to attempt to load the new url.
+    // When the single page app is loaded further down in this file,
+    // the correct url will be waiting in the browser's history for
+    // the single page app to route accordingly.
+    (function(l) {
+      if (l.search[1] === '/' ) {
+        var decoded = l.search.slice(1).split('&').map(function(s) { 
+          return s.replace(/~and~/g, '&')
+        }).join('?');
+        window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+        );
+      }
+    }(window.location))
+  </script>
 </head>
 
 <body>
-
-    <!-- 1. Hero Section -->
-    <header class="hero">
-        <div class="container">
-            <h1>Good deeds, <br><span>nearby.</span></h1>
-            <p style="font-size: 1.5rem; color: var(--text-main); font-weight: 600; margin-bottom: 8px;">Small acts. Real impact.</p>
-            <p>Find quick ways to help people in your community — whenever you have a few minutes.</p>
-
-            <a href="#" class="btn-app-store">
-                <img src="assets/app-store-badge.png" alt="Download on the App Store">
-            </a>
-
-            <!-- Live Counter -->
-            <div class="live-counter" style="margin-top: 40px; display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;">
-                <div class="counter-box">
-                    <div class="counter-value" id="user-count">...</div>
-                    <div class="counter-label">Users on WeHelp</div>
-                </div>
-                <div class="counter-box">
-                    <div class="counter-value" id="helps-count">...</div>
-                    <div class="counter-label">Good Deeds Done</div>
-                </div>
-            </div>
-
-            <!-- Rounded Map Showcase -->
-            <div class="map-showcase" style="margin-top: 60px;">
-                <img src="assets/screenshot-map.png" alt="WeHelp Map View" style="background: #e1e1e1;">
-                <div class="map-placeholder-text" style="display:none;">Map Screenshot Placeholder</div>
-            </div>
-        </div>
-    </header>
-
-    <!-- 2. The Problem Section -->
-    <section class="problem-section" style="padding: 100px 0 60px; background: #fff; text-align: center;">
-        <div class="container" style="max-width: 800px;">
-            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 24px;">Helping shouldn’t be complicated</h2>
-            <p style="font-size: 1.25rem; color: var(--text-secondary); margin-bottom: 32px; line-height: 1.6;">
-                Most volunteering requires planning, schedules, and long commitments. <br><br>
-                But sometimes someone just needs 10 minutes of help.<br>
-                <strong>A quick favor. A second set of hands. Someone who can show up.</strong>
-            </p>
-            <p style="font-size: 1.5rem; font-weight: 600; color: var(--primary-color);">That’s where WeHelp comes in.</p>
-        </div>
-    </section>
-
-    <!-- 3. The Solution Section -->
-    <section class="feature-section" style="background: #fff;">
-        <div class="container feature-block">
-            <div class="feature-text">
-                <h3>Micro-volunteering for <br><span class="highlight">everyday life</span></h3>
-                <p>WeHelp connects people who need help with neighbors who have a little time.</p>
-                <p>From small favors to community tasks, you can jump in and help whenever it works for you.</p>
-                <ul style="list-style: none; margin-top: 24px; color: var(--text-main); font-size: 1.1rem; font-weight: 500;">
-                    <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 12px;">
-                        <span style="background: rgba(52, 199, 89, 0.1); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: var(--primary-color);">✓</span> 
-                        No long commitments.
-                    </li>
-                    <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 12px;">
-                        <span style="background: rgba(52, 199, 89, 0.1); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: var(--primary-color);">✓</span> 
-                        No complicated signup.
-                    </li>
-                    <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 12px;">
-                        <span style="background: rgba(52, 199, 89, 0.1); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; color: var(--primary-color);">✓</span> 
-                        Just real help, when it's needed.
-                    </li>
-                </ul>
-            </div>
-            <div class="feature-visual">
-                <div class="phone-mockup">
-                    <div class="notch"></div>
-                    <img src="assets/screenshot-create.png" alt="Create Request Screen" style="background: #fff;">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 4. How It Works (Simple System) -->
-    <section class="how-it-works pb-80">
-        <div class="container">
-            <div class="section-header" style="margin-bottom: 60px;">
-                <h2>How WeHelp works</h2>
-                <p>Helping your community has never been this simple.</p>
-            </div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; text-align: center;">
-                <div class="step-card" style="background: #fff; padding: 40px 24px; border-radius: 24px; box-shadow: var(--shadow-sm); transition: var(--transition);">
-                    <div style="font-size: 3rem; margin-bottom: 16px;">📍</div>
-                    <h3 style="font-size: 1.25rem; margin-bottom: 12px;">1. Post a task</h3>
-                    <p style="color: var(--text-secondary);">Need a hand? Share what you need and your location.</p>
-                </div>
-                <div class="step-card" style="background: #fff; padding: 40px 24px; border-radius: 24px; box-shadow: var(--shadow-sm); transition: var(--transition);">
-                    <div style="font-size: 3rem; margin-bottom: 16px;">👀</div>
-                    <h3 style="font-size: 1.25rem; margin-bottom: 12px;">2. Neighbors see it</h3>
-                    <p style="color: var(--text-secondary);">People nearby can jump in when they have time.</p>
-                </div>
-                <div class="step-card" style="background: #fff; padding: 40px 24px; border-radius: 24px; box-shadow: var(--shadow-sm); transition: var(--transition);">
-                    <div style="font-size: 3rem; margin-bottom: 16px;">🤝</div>
-                    <h3 style="font-size: 1.25rem; margin-bottom: 12px;">3. Show up & help</h3>
-                    <p style="color: var(--text-secondary);">Coordinate, complete the task, and make someone's day.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 5. The Emotional Payoff -->
-    <section class="feature-section" style="background: #fff;">
-        <div class="container feature-block reverse">
-            <div class="feature-text">
-                <h3>Small help creates <br><span class="highlight">stronger communities</span></h3>
-                <p>Every day, people around you need small moments of help. A neighbor carrying groceries. A park cleanup. A quick favor that means the world to someone else.</p>
-                <p>WeHelp makes it easy to show up.</p>
-                <p style="font-weight: 600; margin-top: 16px;">Because when people help each other, communities become stronger.</p>
-            </div>
-            <div class="feature-visual">
-                <div class="visual-showcase">
-                    <!-- Floating Badges -->
-                    <div class="badge-float badge-1">
-                        <span class="badge-icon">🌟</span>
-                        <span class="badge-label">Super Helper</span>
-                    </div>
-                    <div class="badge-float badge-2">
-                        <span class="badge-icon">🤝</span>
-                        <span class="badge-label">Community First</span>
-                    </div>
-                    <!-- Leaderboard Card -->
-                    <div class="leaderboard-card">
-                        <div class="lb-header">
-                            <h4>Recent Community Heroes</h4>
-                        </div>
-                        <div class="lb-row top-1">
-                            <span class="lb-rank">1</span>
-                            <img src="https://i.pravatar.cc/150?img=12" class="lb-avatar">
-                            <span class="lb-name">You</span>
-                            <span class="lb-points">450 pts</span>
-                        </div>
-                        <div class="lb-row">
-                            <span class="lb-rank">2</span>
-                            <img src="https://i.pravatar.cc/150?img=5" class="lb-avatar">
-                            <span class="lb-name">Sarah J.</span>
-                            <span class="lb-points">320 pts</span>
-                        </div>
-                        <div class="lb-row">
-                            <span class="lb-rank">3</span>
-                            <img src="https://i.pravatar.cc/150?img=3" class="lb-avatar">
-                            <span class="lb-name">Mike T.</span>
-                            <span class="lb-points">280 pts</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 6. Final Call to Action -->
-    <section class="bottom-cta">
-        <div class="container">
-            <div class="cta-banner">
-                <div class="cta-content">
-                    <h2>Your next good deed <br>is nearby</h2>
-                    <p style="font-size: 1.25rem; margin-bottom: 32px; opacity: 0.9;">Open WeHelp and discover small ways to help your community today.</p>
-                    <div class="cta-buttons">
-                        <a href="#" class="btn-app-store-dark"><img src="assets/app-store-badge.png"
-                                style="filter: brightness(0) invert(1);"></a>
-                    </div>
-                </div>
-                <div class="cta-image">
-                    <img src="assets/screenshot-home.png" alt="App Preview"
-                        style="mask-image: linear-gradient(to bottom, black 80%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container footer-content">
-            <div class="footer-logo">We<span>Help</span></div>
-            <div class="footer-links">
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Service</a>
-                <a href="mailto:support@wehelp.community">Support</a>
-            </div>
-            <div style="width: 100%; text-align: center; margin-top: 20px; font-size: 0.8rem; color: #aaa;">
-                &copy; 2026 WeHelp. All rights reserved.
-            </div>
-        </div>
-    </footer>
-
-    <!-- Live Counter Script -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const userCountEl = document.getElementById('user-count');
-            const helpsCountEl = document.getElementById('helps-count');
-
-            // Animation function for counting up
-            function animateValue(obj, start, end, duration) {
-                let startTimestamp = null;
-                const step = (timestamp) => {
-                    if (!startTimestamp) startTimestamp = timestamp;
-                    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                    // ease out cubic curve
-                    const easeOut = 1 - Math.pow(1 - progress, 3);
-                    obj.innerHTML = Math.floor(easeOut * (end - start) + start).toLocaleString();
-                    if (progress < 1) {
-                        window.requestAnimationFrame(step);
-                    }
-                };
-                window.requestAnimationFrame(step);
-            }
-
-            // Mock Fetch - Once Supabase Edge Function is ready, replace this logic with:
-            // fetch('https://[PROJECT_ID].supabase.co/functions/v1/metrics')
-            //  .then(res => res.json())
-            //  .then(data => { 
-            //      animateValue(userCountEl, 0, data.users, 2500); 
-            //      animateValue(helpsCountEl, 0, data.helps, 2500); 
-            //  })
-            //  .catch(err => console.error(err));
-            
-            setTimeout(() => {
-                const mockData = { users: 2450, helps: 8630 };
-                animateValue(userCountEl, 0, mockData.users, 2500);
-                animateValue(helpsCountEl, 0, mockData.helps, 2500);
-            }, 500); // Slight delay for effect
-        });
-    </script>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
 </body>
 
 </html>
