@@ -14,7 +14,7 @@ export function Footer() {
                             <img src="/assets/wehelp-logo.png" alt="WeHelp" className="h-10 w-auto object-contain" />
                         </a>
                         <a href={appStoreLink} target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity self-start">
-                            <img src="/assets/app-store-badge-hq.svg" alt="Download on the App Store" className="h-[42px] w-auto" />
+                            <img src="/assets/app-store-badge-v2.svg" alt="Download on the App Store" className="h-[42px] w-auto" />
                         </a>
                         <p className="text-sm text-gray-400 mt-4">
                             © Copyright 2026. All rights reserved.

@@ -68,7 +68,7 @@ export function HeroRebuild() {
                             className="flex justify-center lg:justify-start"
                         >
                             <a href={appStoreLink} target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-                                <img src="/assets/app-store-badge-hq.svg" alt="Download on the App Store" className="h-12 w-auto" />
+                                <img src="/assets/app-store-badge-v2.svg" alt="Download on the App Store" className="h-12 w-auto" />
                             </a>
                         </motion.div>
                     </div>
