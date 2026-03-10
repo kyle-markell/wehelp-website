@@ -14,8 +14,8 @@ export function StaticTestimonials() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {/* Card 1 */}
                     <div className="bg-white rounded-3xl p-8 shadow-sm">
-                        <h3 className="text-xl font-bold text-gray-900 mb-6 font-['Inter']">Neighbor Who Needed Help</h3>
-                        <p className="text-gray-600 text-base leading-relaxed mb-6 font-serif italic">
+                        <h3 className="text-xl font-bold text-gray-900 mb-6 font-medium">Neighbor Who Needed Help</h3>
+                        <p className="text-gray-600 text-base leading-relaxed mb-6 font-normal">
                             “After my surgery I couldn't drive for two weeks. Someone from WeHelp picked up groceries for me the same afternoon. I had never met them before — but I'll never forget that kindness.”
                         </p>
                         <p className="text-sm text-gray-400 font-medium">— Maria, Phoenix</p>
@@ -23,8 +23,8 @@ export function StaticTestimonials() {
 
                     {/* Card 2 */}
                     <div className="bg-white rounded-3xl p-8 shadow-sm">
-                        <h3 className="text-xl font-bold text-gray-900 mb-6 font-['Inter']">Volunteer / Contributor</h3>
-                        <p className="text-gray-600 text-base leading-relaxed mb-6 font-serif italic">
+                        <h3 className="text-xl font-bold text-gray-900 mb-6 font-medium">Volunteer / Contributor</h3>
+                        <p className="text-gray-600 text-base leading-relaxed mb-6 font-normal">
                             “I only had 20 minutes before work, but I helped someone move a small dresser down the street. It felt good knowing a small moment of my day made someone else's easier.”
                         </p>
                         <p className="text-sm text-gray-400 font-medium">— Jordan, Tempe</p>
@@ -32,8 +32,8 @@ export function StaticTestimonials() {
 
                     {/* Card 3 */}
                     <div className="bg-white rounded-3xl p-8 shadow-sm">
-                        <h3 className="text-xl font-bold text-gray-900 mb-6 font-['Inter']">Community Organization</h3>
-                        <p className="text-gray-600 text-base leading-relaxed mb-6 font-serif italic">
+                        <h3 className="text-xl font-bold text-gray-900 mb-6 font-medium">Community Organization</h3>
+                        <p className="text-gray-600 text-base leading-relaxed mb-6 font-normal">
                             “WeHelp has helped us get volunteers faster than any traditional signup sheet. Small tasks that used to take days to fill now happen the same day.”
                         </p>
                         <p className="text-sm text-gray-400 font-medium">— Lisa, Shelter Coordinator</p>

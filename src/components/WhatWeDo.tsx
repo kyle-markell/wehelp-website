@@ -34,8 +34,8 @@ export function WhatWeDo() {
     return (
         <section className="py-24 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16 lg:mb-24">
-                    <h2 className="text-[48px] leading-[40px] font-medium tracking-tight text-gray-900">
+                <div className="text-center mb-16 lg:mb-24 px-4">
+                    <h2 className="text-4xl md:text-[48px] leading-tight md:leading-[40px] font-medium tracking-tight text-gray-900">
                         What does <span className="text-[#00B900]">WeHelp</span> do?
                     </h2>
                 </div>
@@ -43,8 +43,8 @@ export function WhatWeDo() {
                 <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
 
                     {/* Left: Interactive iPhone Screenshot */}
-                    <div className="flex-1 w-full flex justify-center lg:justify-end lg:pr-12">
-                        <div className="relative w-full max-w-[400px] flex justify-center">
+                    <div className="flex-1 w-full flex flex-col items-center lg:items-end justify-center lg:pr-12">
+                        <div className="relative w-full max-w-[400px] flex justify-center h-[50vh] md:h-[60vh] lg:h-[70vh]">
                             <AnimatePresence mode="wait">
                                 <motion.img
                                     key={activeIndex}
@@ -54,9 +54,22 @@ export function WhatWeDo() {
                                     animate={{ opacity: 1, scale: 1 }}
                                     exit={{ opacity: 0, scale: 1.02 }}
                                     transition={{ duration: 0.3 }}
-                                    className="w-full h-auto object-contain drop-shadow-xl relative z-10"
+                                    className="w-auto h-full max-h-full object-contain drop-shadow-xl relative z-10"
                                 />
                             </AnimatePresence>
+                        </div>
+
+                        {/* Interactive Carousel Dots */}
+                        <div className="flex gap-2.5 mt-8 lg:mr-[15%]">
+                            {features.map((_, idx) => (
+                                <button
+                                    key={idx}
+                                    onClick={() => setActiveIndex(idx)}
+                                    className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${idx === activeIndex ? 'bg-[#00B900] scale-125' : 'bg-gray-300 hover:bg-gray-400'
+                                        }`}
+                                    aria-label={`Show ${features[idx].title} screenshot`}
+                                />
+                            ))}
                         </div>
                     </div>
 
@@ -74,14 +87,14 @@ export function WhatWeDo() {
                                         }`}
                                 >
                                     <h3 className={isActive
-                                        ? 'text-[21px] leading-[29.4px] font-semibold text-gray-900 mb-2'
-                                        : 'text-[20px] leading-[28px] font-semibold text-gray-700 mb-2'
+                                        ? 'text-lg md:text-[21px] md:leading-[29.4px] font-semibold text-gray-900 mb-2'
+                                        : 'text-lg md:text-[20px] md:leading-[28px] font-semibold text-gray-700 mb-2'
                                     }>
                                         {feature.title}
                                     </h3>
                                     <p className={isActive
-                                        ? 'text-[16.8px] leading-[25.2px] font-normal text-gray-800'
-                                        : 'text-[16px] leading-[24px] font-normal text-gray-500'
+                                        ? 'text-base md:text-[16.8px] md:leading-[25.2px] font-normal text-gray-800'
+                                        : 'text-base md:text-[16px] md:leading-[24px] font-normal text-gray-500'
                                     }>
                                         {feature.description}
                                     </p>

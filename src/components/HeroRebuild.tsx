@@ -1,5 +1,22 @@
 import { motion } from 'framer-motion';
 
+const JoinBadge = () => (
+    <div className="inline-flex items-center gap-3 bg-white border border-gray-200 rounded-full py-1.5 pr-5 pl-2 shadow-sm">
+        <div className="flex -space-x-2">
+            <img className="w-8 h-8 rounded-full border-2 border-white object-cover" src="https://i.pravatar.cc/100?img=33" alt="" />
+            <img className="w-8 h-8 rounded-full border-2 border-white object-cover" src="https://i.pravatar.cc/100?img=47" alt="" />
+            <img className="w-8 h-8 rounded-full border-2 border-white object-cover" src="https://i.pravatar.cc/100?img=12" alt="" />
+        </div>
+        <div className="flex items-center gap-1.5 font-medium text-[14px] md:text-[16px]">
+            <span className="text-gray-900">
+                Join 10,000+ neighbors on <span className="text-[#00B900]">WeHelp</span>.
+            </span>
+            <span className="text-yellow-400 text-lg">★</span>
+            <span className="text-gray-900">5.0 rating</span>
+        </div>
+    </div>
+);
+
 export function HeroRebuild() {
     const appStoreLink = "https://apps.apple.com/us/app/wehelp-community-volunteering/id6759263096";
 
@@ -14,9 +31,9 @@ export function HeroRebuild() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
-                            className="mb-8 flex justify-center lg:justify-start"
+                            className="mb-6 flex justify-center lg:justify-start"
                         >
-                            <img src="/assets/join-header.png" alt="Join 10,000+ neighbors on WeHelp. 5.0 rating" className="h-10 w-auto" />
+                            <JoinBadge />
                         </motion.div>
 
                         <motion.div
@@ -25,10 +42,10 @@ export function HeroRebuild() {
                             transition={{ duration: 0.6, delay: 0.1 }}
                             className="space-y-1 mb-6"
                         >
-                            <h1 className="text-[52px] leading-[65px] font-bold text-gray-900 tracking-tight">
+                            <h1 className="text-4xl md:text-[52px] leading-tight md:leading-[65px] font-bold text-gray-900 tracking-tight">
                                 Welcome to <span className="text-[#00B900]">WeHelp</span>
                             </h1>
-                            <h2 className="text-[52px] leading-[65px] font-medium text-gray-900 tracking-tight">
+                            <h2 className="text-4xl md:text-[52px] leading-tight md:leading-[65px] font-medium text-gray-900 tracking-tight">
                                 The modern way to <br className="hidden lg:block" />help.
                             </h2>
                         </motion.div>
@@ -39,8 +56,8 @@ export function HeroRebuild() {
                             transition={{ duration: 0.6, delay: 0.2 }}
                             className="mb-10"
                         >
-                            <p className="text-[16px] leading-[24px] text-gray-500 max-w-[460px] mx-auto lg:mx-0 font-normal">
-                                WeHelp is a micro volunteering platform. Help your neighbors with a variety of tasks in your spare time. It's time to bring back <span className="text-[#00B900] font-medium">human connection</span>. Make someone's day today!
+                            <p className="text-base md:text-[16px] leading-relaxed md:leading-[24px] text-gray-500 max-w-[460px] mx-auto lg:mx-0 font-normal">
+                                <span className="text-[#00B900] font-medium">WeHelp</span> is a micro volunteering platform. Help your neighbors with a variety of tasks in your spare time. It's time to bring back human connection. Make someone's day today!
                             </p>
                         </motion.div>
 
