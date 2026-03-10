@@ -45,7 +45,7 @@ export function WhatWeDo() {
                     {/* Left: Interactive iPhone Screenshot */}
                     <div className="flex-1 w-full flex flex-col items-center lg:items-end justify-center lg:pr-12">
                         <div className="relative w-full max-w-[400px] flex justify-center h-[50vh] md:h-[60vh] lg:h-[70vh]">
-                            <AnimatePresence mode="wait">
+                            <AnimatePresence>
                                 <motion.img
                                     key={activeIndex}
                                     src={features[activeIndex].image}
@@ -54,7 +54,7 @@ export function WhatWeDo() {
                                     animate={{ opacity: 1, scale: 1 }}
                                     exit={{ opacity: 0, scale: 1.02 }}
                                     transition={{ duration: 0.3 }}
-                                    className="w-auto h-full max-h-full object-contain drop-shadow-xl relative z-10"
+                                    className="absolute inset-0 m-auto w-auto h-full max-h-full object-contain drop-shadow-xl z-10"
                                 />
                             </AnimatePresence>
                         </div>
