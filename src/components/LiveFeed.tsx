@@ -72,7 +72,7 @@ export function LiveFeed() {
                     </p>
                 </div>
 
-                <div className="relative min-h-[400px]">
+                <div className="relative h-[420px] overflow-hidden">
                     <div className="flex flex-col gap-4">
                         <AnimatePresence initial={false}>
                             {feed.map((item) => (

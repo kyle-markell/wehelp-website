@@ -27,7 +27,7 @@ export function Header() {
                     </div>
                     <div className="flex items-center">
                         <a href={appStoreLink} target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-                            <img src="/assets/app-store-badge-hq.png" alt="Download on the App Store" className="h-[42px] w-auto" />
+                            <img src="/assets/app-store-badge-hq.svg" alt="Download on the App Store" className="h-[42px] w-auto" />
                         </a>
                     </div>
                 </div>
