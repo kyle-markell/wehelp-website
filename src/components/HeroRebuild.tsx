@@ -14,20 +14,32 @@ export function HeroRebuild() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
-                            className="space-y-4"
+                            className="mb-8 flex justify-center lg:justify-start"
                         >
-                            <h1 className="text-5xl lg:text-7xl font-black tracking-tighter text-gray-900 leading-[1.1]">
-                                Welcome to <span className="text-[#00B900]">WeHelp</span><br />
-                                The modern way to help.
-                            </h1>
+                            <img src="/assets/join-header.png" alt="Join 10,000+ neighbors on WeHelp. 5.0 rating" className="h-10 w-auto" />
                         </motion.div>
 
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, delay: 0.1 }}
+                            className="space-y-1 mb-6"
                         >
-                            <p className="text-xl lg:text-2xl text-gray-500 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+                            <h1 className="text-[52px] leading-[65px] font-bold text-gray-900 tracking-tight">
+                                Welcome to <span className="text-[#00B900]">WeHelp</span>
+                            </h1>
+                            <h2 className="text-[52px] leading-[65px] font-medium text-gray-900 tracking-tight">
+                                The modern way to <br className="hidden lg:block" />help.
+                            </h2>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            className="mb-10"
+                        >
+                            <p className="text-[16px] leading-[24px] text-gray-500 max-w-[460px] mx-auto lg:mx-0 font-normal">
                                 WeHelp is a micro volunteering platform. Help your neighbors with a variety of tasks in your spare time. It's time to bring back <span className="text-[#00B900] font-medium">human connection</span>. Make someone's day today!
                             </p>
                         </motion.div>
@@ -35,11 +47,11 @@ export function HeroRebuild() {
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.2 }}
-                            className="pt-4 flex justify-center lg:justify-start"
+                            transition={{ duration: 0.6, delay: 0.3 }}
+                            className="flex justify-center lg:justify-start"
                         >
                             <a href={appStoreLink} target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity">
-                                <img src="/assets/app-store-badge.png" alt="Download on the App Store" className="h-14 w-auto" />
+                                <img src="/assets/app-store-badge.svg" alt="Download on the App Store" className="h-12 w-auto" />
                             </a>
                         </motion.div>
                     </div>
