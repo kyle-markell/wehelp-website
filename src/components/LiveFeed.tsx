@@ -10,7 +10,17 @@ type FeedItem = {
     avatarUrl: string;
 };
 
-const MOCK_NAMES = ["Kyle M.", "Genevieve G.", "Sarah T.", "Marcus J.", "David R.", "Elena S."];
+const MOCK_NAMES = [
+    "Kyle M.", "Genevieve G.", "Sarah T.", "Marcus J.", "David R.", "Elena S.",
+    "Michael B.", "Jessica W.", "Christopher L.", "Amanda C.", "Matthew P.", "Ashley M.",
+    "Joshua D.", "Sarah K.", "Andrew V.", "Brittany S.", "Daniel H.", "Samantha B.",
+    "James F.", "Tyler W.", "Justin G.", "Lauren M.", "Ryan O.", "Emily T.",
+    "John N.", "Megan A.", "Robert E.", "Lauren K.", "William S.", "Hannah J.",
+    "Nicholas Y.", "Rachel R.", "Anthony P.", "Taylor C.", "Jonathan M.", "Olivia D.",
+    "David L.", "Alexis F.", "Joseph B.", "Victoria H.", "Charles W.", "Elizabeth S.",
+    "Thomas G.", "Brianna V.", "Christopher K.", "Natalie M.", "Brian C.", "Chloe P.",
+    "Kevin R.", "Grace L.", "Steven T.", "Lily E."
+];
 const MOCK_ACTIONS = [
     { text: "posted a new request", requiresLocation: true },
     { text: "helped someone", requiresLocation: true },
@@ -18,8 +28,19 @@ const MOCK_ACTIONS = [
 ];
 const MOCK_LOCATIONS = ["Tempe, Arizona", "Phoenix, Arizona", "Scottsdale, Arizona", "Mesa, Arizona", "Peoria, Arizona"];
 
+let recentNames: string[] = [];
+
 function generateRandomItem(): FeedItem {
-    const name = MOCK_NAMES[Math.floor(Math.random() * MOCK_NAMES.length)];
+    let name: string = "";
+    do {
+        name = MOCK_NAMES[Math.floor(Math.random() * MOCK_NAMES.length)];
+    } while (recentNames.includes(name));
+
+    recentNames.push(name);
+    if (recentNames.length > 25) {
+        recentNames.shift();
+    }
+
     const actionObj = MOCK_ACTIONS[Math.floor(Math.random() * MOCK_ACTIONS.length)];
     const location = actionObj.requiresLocation ? MOCK_LOCATIONS[Math.floor(Math.random() * MOCK_LOCATIONS.length)] : undefined;
     const avatarId = Math.floor(Math.random() * 70) + 1;
