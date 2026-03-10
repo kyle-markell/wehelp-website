@@ -42,34 +42,36 @@ export function WhatWeDo() {
 
                 <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
 
-                    {/* Left: Interactive iPhone Screenshot */}
+                    {/* Left: Interactive iPhone Screenshot and Dots */}
                     <div className="flex-1 w-full flex flex-col items-center lg:items-end justify-center lg:pr-12">
-                        <div className="relative w-full max-w-[400px] flex justify-center h-[50vh] md:h-[60vh] lg:h-[70vh]">
-                            <AnimatePresence>
-                                <motion.img
-                                    key={activeIndex}
-                                    src={features[activeIndex].image}
-                                    alt={features[activeIndex].title}
-                                    initial={{ opacity: 0, scale: 0.98 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    exit={{ opacity: 0, scale: 1.02 }}
-                                    transition={{ duration: 0.3 }}
-                                    className="absolute inset-0 m-auto w-auto h-full max-h-full object-contain drop-shadow-xl z-10"
-                                />
-                            </AnimatePresence>
-                        </div>
+                        <div className="w-full max-w-[400px] flex flex-col items-center">
+                            <div className="relative w-full flex justify-center h-[50vh] md:h-[60vh] lg:h-[70vh]">
+                                <AnimatePresence>
+                                    <motion.img
+                                        key={activeIndex}
+                                        src={features[activeIndex].image}
+                                        alt={features[activeIndex].title}
+                                        initial={{ opacity: 0, scale: 0.98 }}
+                                        animate={{ opacity: 1, scale: 1 }}
+                                        exit={{ opacity: 0, scale: 1.02 }}
+                                        transition={{ duration: 0.3 }}
+                                        className="absolute inset-0 m-auto w-auto h-full max-h-full object-contain drop-shadow-xl z-10"
+                                    />
+                                </AnimatePresence>
+                            </div>
 
-                        {/* Interactive Carousel Dots */}
-                        <div className="flex gap-2.5 mt-8 lg:mr-[15%]">
-                            {features.map((_, idx) => (
-                                <button
-                                    key={idx}
-                                    onClick={() => setActiveIndex(idx)}
-                                    className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${idx === activeIndex ? 'bg-[#00B900] scale-125' : 'bg-gray-300 hover:bg-gray-400'
-                                        }`}
-                                    aria-label={`Show ${features[idx].title} screenshot`}
-                                />
-                            ))}
+                            {/* Interactive Carousel Dots */}
+                            <div className="flex gap-2.5 mt-8 justify-center">
+                                {features.map((_, idx) => (
+                                    <button
+                                        key={idx}
+                                        onClick={() => setActiveIndex(idx)}
+                                        className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${idx === activeIndex ? 'bg-[#00B900] scale-125' : 'bg-gray-300 hover:bg-gray-400'
+                                            }`}
+                                        aria-label={`Show ${features[idx].title} screenshot`}
+                                    />
+                                ))}
+                            </div>
                         </div>
                     </div>
 
