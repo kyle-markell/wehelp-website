@@ -46,7 +46,7 @@ export function HeroRebuild() {
                                 Welcome to <span className="text-[#00B900]">WeHelp</span>
                             </h1>
                             <h2 className="text-4xl md:text-[52px] leading-tight md:leading-[65px] font-medium text-gray-900 tracking-tight">
-                                The modern way to <br className="hidden lg:block" />help.
+                                The modern way to <br className="hidden lg:block" />volunteer.
                             </h2>
                         </motion.div>
 
@@ -57,7 +57,7 @@ export function HeroRebuild() {
                             className="mb-10"
                         >
                             <p className="text-base md:text-[16px] leading-relaxed md:leading-[24px] text-gray-500 max-w-[460px] mx-auto lg:mx-0 font-normal">
-                                <span className="text-[#00B900] font-medium">WeHelp</span> is a micro volunteering platform. Help your neighbors with a variety of tasks in your spare time. It's time to bring back human connection. Make someone's day today!
+                                <span className="text-[#00B900] font-medium">WeHelp</span> is a micro volunteering platform. Help your neighbors with a variety of tasks in your spare time. Make someone's day today!
                             </p>
                         </motion.div>
 
