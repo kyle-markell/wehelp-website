@@ -1,46 +1,39 @@
-import { Button } from './Button';
 import { Link } from 'react-router-dom';
 
 export function Footer() {
+    const appStoreLink = "https://apps.apple.com/us/app/wehelp-community-volunteering/id6759263096";
+
     return (
-        <footer className="bg-white pt-24 pb-12 border-t border-gray-100">
+        <footer className="bg-white py-16 border-t border-gray-100">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 items-start">
 
-                {/* Main CTA Section */}
-                <div className="text-center mb-24">
-                    <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900 mb-6">
-                        The world is a better place <br />
-                        with <span className="text-[#00B900]">WeHelp.</span>
-                    </h2>
-                    <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
-                        Download WeHelp and show up for someone else today.
-                    </p>
-
-                    <div className="flex flex-col sm:flex-row justify-center gap-4">
-                        <a href="https://apps.apple.com/us/app/wehelp-community-volunteering/id6759263096" target="_blank" rel="noopener noreferrer">
-                            <Button size="lg" className="gap-2 bg-[#00B900] hover:bg-[#009900]">
-                                Download on App Store
-                            </Button>
+                    {/* Left: Logo & App Store */}
+                    <div className="flex flex-col gap-6">
+                        <img src="/assets/wehelp-logo.png" alt="WeHelp" className="h-10 w-auto object-contain self-start" />
+                        <a href={appStoreLink} target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-opacity self-start">
+                            <img src="/assets/app-store-badge.png" alt="Download on the App Store" className="h-[42px] w-auto" />
                         </a>
-                    </div>
-                </div>
-
-                {/* Links & Copyright */}
-                <div className="border-t border-gray-100 pt-12 flex flex-col md:flex-row justify-between items-center gap-6">
-                    <div className="flex items-center gap-2">
-                        <span className="text-xl font-bold text-gray-900">WeHelp</span>
-                        <span className="text-gray-400 text-sm">© 2026 WeHelp Inc.</span>
+                        <p className="text-sm text-gray-400 mt-4">
+                            © Copyright 2026. All rights reserved.
+                        </p>
                     </div>
 
-                    <div className="flex gap-8 text-sm text-gray-500">
-                        <Link to="/privacy" className="hover:text-gray-900 transition-colors">Privacy</Link>
-                        <Link to="/terms" className="hover:text-gray-900 transition-colors">Terms</Link>
+                    {/* Center: Legal */}
+                    <div className="flex flex-col gap-4">
+                        <h4 className="font-bold text-gray-900 mb-2">Legal</h4>
+                        <Link to="/privacy" className="text-sm text-gray-500 hover:text-[#00B900] transition-colors">Privacy Policy</Link>
+                        <Link to="/terms" className="text-sm text-gray-500 hover:text-[#00B900] transition-colors">Terms of Service</Link>
                     </div>
+
+                    {/* Right: Company */}
+                    <div className="flex flex-col gap-4 md:text-right">
+                        <h4 className="font-bold text-gray-900 mb-2">Company</h4>
+                        <a href="mailto:support@wehelp.app" className="text-sm text-gray-500 hover:text-[#00B900] transition-colors">Contact</a>
+                    </div>
+
                 </div>
             </div>
-
-            {/* Bottom Glow */}
-            <div className="fixed bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#00B900]/5 to-transparent pointer-events-none -z-10" />
         </footer>
     );
 }

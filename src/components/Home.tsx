@@ -1,21 +1,19 @@
 import { Header } from './Header';
-import { Hero } from './Hero';
-import { EmotionalSection } from './EmotionalSection';
-import { Features } from './Features';
-import { Testimonials } from './Testimonials';
-import { HowItWorks } from './HowItWorks';
+import { HeroRebuild } from './HeroRebuild';
+import { WhatWeDo } from './WhatWeDo';
+import { LiveFeed } from './LiveFeed';
+import { StaticTestimonials } from './StaticTestimonials';
 import { Footer } from './Footer';
 
 export function Home() {
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-white font-sans text-gray-900 selection:bg-[#00B900]/20">
             <Header />
             <main>
-                <Hero />
-                <EmotionalSection />
-                <Features />
-                <Testimonials />
-                <HowItWorks />
+                <HeroRebuild />
+                <WhatWeDo />
+                <LiveFeed />
+                <StaticTestimonials />
             </main>
             <Footer />
         </div>
