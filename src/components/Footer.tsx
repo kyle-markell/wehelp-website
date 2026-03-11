@@ -31,7 +31,7 @@ export function Footer() {
                     {/* Right: Company */}
                     <div className="flex flex-col gap-4 md:text-right">
                         <h4 className="font-bold text-gray-900 mb-2">Company</h4>
-                        <a href="mailto:support@wehelp.app" className="text-sm text-gray-500 hover:text-[#00B900] transition-colors">Contact</a>
+                        <a href="mailto:support@wehelp.community" className="text-sm text-gray-500 hover:text-[#00B900] transition-colors">Contact</a>
                     </div>
 
                 </div>

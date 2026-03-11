@@ -36,7 +36,7 @@ export function WhatWeDo() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16 lg:mb-24 px-4">
                     <h2 className="text-4xl md:text-[48px] leading-tight md:leading-[40px] font-medium tracking-tight text-gray-900">
-                        What does <span className="text-[#00B900]">WeHelp</span> do?
+                        <span className="text-[#00B900]">WeHelp</span> features
                     </h2>
                 </div>
 
